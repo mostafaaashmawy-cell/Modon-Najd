@@ -166,7 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Prepare form data
       const formData = new FormData(leadForm);
-      formData.set('phone_full', fullPhoneNumber);
+      formData.set('name', fullName);
+      formData.set('phone', fullPhoneNumber);
       formData.set('project', 'Modon Ras El Hekma');
       formData.set('source_agent', 'propertiesegy');
       formData.set('page_url', window.location.href);
@@ -179,6 +180,9 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
           body: formData
         });
 
