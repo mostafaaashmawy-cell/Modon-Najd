@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // Optional redirect or offer to open WhatsApp
           setTimeout(() => {
-            const waText = encodeURIComponent(`Hello, I just registered my interest in Modon Ras El Hekma on propertiesegy.\nName: ${fullName}\nPhone: ${fullPhoneNumber}\nUnit: ${unitType}`);
+            const waText = encodeURIComponent(`Hello, I just registered my interest in Modon Ras El Hekma on propertiesegy.\nName: ${fullName}\nPhone: ${fullPhoneNumber}`);
             const waUrl = `https://wa.me/201020958859?text=${waText}`;
             window.open(waUrl, '_blank');
           }, 2000);
