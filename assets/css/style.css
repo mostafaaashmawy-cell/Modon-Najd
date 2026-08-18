@@ -1308,57 +1308,6 @@ button, input, select, textarea {
   100% { transform: scale(1.4); opacity: 0; }
 }
 
-/* Mobile Sticky Action Bar */
-.mobile-sticky-bar {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 990;
-  background: rgba(7, 9, 14, 0.95);
-  backdrop-filter: blur(15px);
-  border-top: 1px solid var(--border-gold);
-  padding: 0.75rem 1rem;
-}
-
-.mobile-bar-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 0.75rem;
-}
-
-.btn-mobile-wa {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  background: #25d366;
-  color: #0b0f17;
-  padding: 0.75rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.btn-mobile-inquire {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  background: var(--grad-gold);
-  color: #07090e;
-  padding: 0.75rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border: none;
-}
-
 /* Notification Toast / Alert Modal */
 .toast-modal {
   position: fixed;
@@ -1409,17 +1358,27 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   RESPONSIVE MEDIA QUERIES
+   RESPONSIVE MEDIA QUERIES (100% Mobile Optimized & Luxury Fine-Tuned)
    ========================================================================== */
+
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.75rem;
   }
   
   .hero-content {
     text-align: center;
     align-items: center;
+  }
+
+  .hero-brand-top {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-brand-sub {
+    justify-content: center;
   }
   
   .hero-description {
@@ -1428,22 +1387,24 @@ button, input, select, textarea {
 
   .hero-pills-row {
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 540px;
+    margin: 0.5rem auto 0;
   }
 
   .hero-form-card {
-    max-width: 580px;
+    max-width: 520px;
     margin: 0 auto;
     width: 100%;
   }
 
   .amenities-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 
   .investment-cards-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .nav-links, .nav-actions {
@@ -1456,53 +1417,416 @@ button, input, select, textarea {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
+
+  .hero-section {
+    padding-top: 45px;
+    padding-bottom: 45px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    gap: 1.15rem;
+  }
+
+  .hero-modon-logo {
+    height: 44px;
+  }
+
+  .hero-brand-sub {
+    gap: 0.5rem;
+  }
+
+  .hero-agency {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-partners {
+    font-size: 0.6rem;
+    padding-left: 0.5rem;
+  }
+
+  .hero-location-tag {
+    font-size: 0.68rem;
+    padding: 0.35rem 0.85rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 6.2vw, 2.35rem);
+    line-height: 1.22;
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    max-width: 100%;
+  }
+
+  /* 2x2 Hero stat pills */
   .hero-pills-row {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
   }
 
+  .hero-pill-card {
+    padding: 0.7rem 0.5rem;
+  }
+
+  .pill-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.15rem;
+  }
+
+  .pill-value {
+    font-size: 1.1rem;
+  }
+
+  .pill-sub {
+    font-size: 0.58rem;
+  }
+
+  /* Hero Form Card */
+  .hero-form-card {
+    padding: 1.65rem 1.25rem;
+    border-radius: 10px;
+  }
+
+  .form-header {
+    margin-bottom: 1.35rem;
+  }
+
+  .form-title {
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+  }
+
+  .form-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .form-input {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.88rem;
+    min-height: 48px;
+  }
+
+  .btn-submit {
+    padding: 0.9rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    min-height: 50px;
+  }
+
+  .form-disclaimer {
+    font-size: 0.65rem;
+    line-height: 1.55;
+  }
+
+  /* Section Spacing & Headings */
+  .section-investment,
+  .section-lifestyle,
+  .section-gallery,
+  .section-why-us,
+  .section-final-cta {
+    padding: 4.25rem 0;
+  }
+
+  .section-header-center {
+    margin-bottom: 2.25rem;
+  }
+
+  .section-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+  }
+
+  .section-title {
+    font-size: clamp(1.55rem, 5.5vw, 2.15rem);
+    line-height: 1.25;
+  }
+
+  .section-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    margin-top: 0.75rem;
+  }
+
+  /* Investment Section */
+  .investment-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .invest-card {
+    padding: 1.5rem 0.85rem;
+    border-radius: 8px;
+  }
+
+  .invest-card-tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.5rem;
+  }
+
+  .invest-card-value {
+    font-size: clamp(1.4rem, 4.5vw, 1.85rem);
+    margin-bottom: 0.25rem;
+  }
+
+  .invest-card-caption,
+  .invest-card-unit {
+    font-size: 0.7rem;
+  }
+
+  .btn-whatsapp-cta {
+    width: 100%;
+    max-width: 360px;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+  }
+
+  /* Lifestyle / Amenities */
   .amenities-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
   }
 
-  .why-grid {
-    grid-template-columns: 1fr;
+  .amenities-grid > .amenity-card:last-child {
+    grid-column: span 2;
+    max-width: 280px;
+    margin: 0 auto;
+    width: 100%;
   }
 
-  .trust-points-strip {
-    grid-template-columns: 1fr;
+  .amenity-card {
+    padding: 1.4rem 0.85rem;
+    border-radius: 8px;
+  }
+
+  .amenity-icon-box {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 0.9rem;
+  }
+
+  .amenity-icon-box svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .amenity-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .amenity-desc {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .signature-residences-banner {
+    padding: 2rem 1.25rem;
+    border-radius: 10px;
+  }
+
+  .residence-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+  }
+
+  .residence-title {
+    font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+  }
+
+  .residence-desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  /* Gallery */
+  .gallery-main-view {
+    aspect-ratio: 16 / 10;
+    border-radius: 8px;
+    margin-bottom: 0.85rem;
+  }
+
+  .gallery-caption-overlay {
+    padding: 1rem 1.25rem;
+  }
+
+  .gallery-caption-text {
+    font-size: 0.92rem;
+  }
+
+  .gallery-nav-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .gallery-nav-btn.prev {
+    left: 0.75rem;
+  }
+
+  .gallery-nav-btn.next {
+    right: 0.75rem;
   }
 
   .gallery-thumbs-row {
     grid-template-columns: repeat(5, 1fr);
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
-  .mobile-sticky-bar {
-    display: block;
+  .thumb-item {
+    border-radius: 6px;
   }
 
-  body {
-    padding-bottom: 60px;
+  /* Why Us */
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .why-card {
+    padding: 2rem 1.35rem;
+    border-radius: 10px;
+  }
+
+  .why-icon-wrap {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1.25rem;
+  }
+
+  .why-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .why-desc {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .trust-points-strip {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+  }
+
+  .trust-item {
+    padding: 0.8rem 1rem;
+  }
+
+  .trust-text {
+    font-size: 0.75rem;
+  }
+
+  /* Final CTA */
+  .final-cta-box {
+    padding: 2.5rem 1.25rem;
+    border-radius: 12px;
+  }
+
+  .final-cta-title {
+    font-size: clamp(1.5rem, 5.2vw, 2rem);
+  }
+
+  .final-cta-desc {
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .final-cta-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .btn-primary-action {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.78rem;
+  }
+
+  .final-cta-actions .btn-whatsapp-cta {
+    max-width: 100%;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 3.5rem 1rem 2.5rem;
+  }
+
+  .footer-logo {
+    max-width: 200px;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-location {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-disclaimer {
+    font-size: 0.7rem;
+    line-height: 1.65;
+    margin-bottom: 1.35rem;
+  }
+
+  .footer-nav-links {
+    gap: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-nav-links a {
+    font-size: 0.72rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.68rem;
+  }
+
+  /* Floating WhatsApp on Mobile */
+  .floating-whatsapp {
+    bottom: 24px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .floating-whatsapp svg {
+    width: 28px;
+    height: 28px;
   }
 }
 
-@media (max-width: 540px) {
-  .amenities-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 380px) {
+  .hero-pills-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem;
   }
 
   .investment-cards-grid {
     grid-template-columns: 1fr;
   }
 
-  .hero-form-card {
-    padding: 1.5rem 1.25rem;
+  .amenities-grid {
+    grid-template-columns: 1fr;
   }
 
-  .floating-whatsapp {
-    bottom: 80px;
-    right: 20px;
-    width: 52px;
-    height: 52px;
+  .amenities-grid > .amenity-card:last-child {
+    grid-column: auto;
+    max-width: 100%;
   }
 }
