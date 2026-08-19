@@ -33,6 +33,38 @@
   <!-- intl-tel-input CDN CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css" />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-299139259"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-299139259');
+  </script>
+
+  <!-- Event snippet for Modon conversion page -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined' && url) {
+        window.location = url;
+      }
+    };
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+          'send_to': 'AW-299139259/9VhkCPqxouQcELuB0o4B',
+          'value': 1.0,
+          'currency': 'EGP',
+          'event_callback': callback
+      });
+    } else {
+      callback();
+    }
+    return false;
+  }
+  </script>
+
   <!-- Main Custom Luxury Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>

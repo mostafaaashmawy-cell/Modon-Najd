@@ -192,11 +192,12 @@ document.addEventListener('DOMContentLoaded', () => {
           showToast('Registration Successful!', 'Thank you. Our luxury property consultant will contact you shortly with full project details.');
           leadForm.reset();
 
-          // Trigger Google Analytics / GTM conversion if present
+          // Trigger Google Ads conversion
           if (typeof window.gtag === 'function') {
-            window.gtag('event', 'lead_form_submitted', {
-              event_category: 'Leads',
-              event_label: 'Modon Ras El Hekma Lead'
+            window.gtag('event', 'conversion', {
+              'send_to': 'AW-299139259/9VhkCPqxouQcELuB0o4B',
+              'value': 1.0,
+              'currency': 'EGP'
             });
           }
 
@@ -212,6 +213,14 @@ document.addEventListener('DOMContentLoaded', () => {
           console.warn('Web3Forms returned:', result);
           showToast('Request Received', 'Thank you! We have received your inquiry and our advisor will reach out to you immediately.');
           
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'conversion', {
+              'send_to': 'AW-299139259/9VhkCPqxouQcELuB0o4B',
+              'value': 1.0,
+              'currency': 'EGP'
+            });
+          }
+
           // Open WhatsApp directly as instant fallback
           setTimeout(() => {
             const waText = encodeURIComponent(`Hello, I am interested in Modon Ras El Hekma.\nName: ${fullName}\nPhone: ${fullPhoneNumber}`);
@@ -222,6 +231,14 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Submission error:', error);
         showToast('Request Received', 'Thank you! Redirecting you to our official WhatsApp advisor for immediate assistance.');
         
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-299139259/9VhkCPqxouQcELuB0o4B',
+            'value': 1.0,
+            'currency': 'EGP'
+          });
+        }
+
         setTimeout(() => {
           const waText = encodeURIComponent(`Hello, I am interested in Modon Ras El Hekma.\nName: ${fullName}\nPhone: ${fullPhoneNumber}`);
           window.open(`https://wa.me/201020958859?text=${waText}`, '_blank');
@@ -234,7 +251,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. Mobile Menu Toggle
+  // 6. Track all WhatsApp clicks for Google Ads Conversion
+  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    link.addEventListener('click', function () {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-299139259/9VhkCPqxouQcELuB0o4B',
+          'value': 1.0,
+          'currency': 'EGP'
+        });
+      }
+    });
+  });
+
+  // 7. Mobile Menu Toggle
   const mobileToggle = document.getElementById('mobileToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   if (mobileToggle && mobileMenu) {
